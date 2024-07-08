@@ -1,9 +1,25 @@
 {% extends '../layout.html' %}
+
 {% block title %}
     problem list
 {% endblock %}
+{% load static %}
 
 {% block content %}
+    <nav aria-label="breadcrumb" class="shadow p-2 position-sticky top-0 bg-white" style="z-index: 5">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="fw-semibold" href="/">Home</a></li>
+            <li class="breadcrumb-item active fw-bolder text-capitalize" aria-current="page">problem</li>
+        </ol>
+    </nav>
+
+
+    <h1>Play Go Game</h1>
+<div id="board-container">k</div>
+    <script defer type="text/javascript" src="{% static 'assets/js/wgo/wgo.js' %}"></script> <!-- or tenuki.js -->
+    <script defer src="{% static 'assets/js/scripts.js' %}"></script>
+
+
       <main class="container">
               <h1 class="text-warning fw-bolder text-center text-uppercase my-5">problem list</h1>
         <div class="p-2 container">

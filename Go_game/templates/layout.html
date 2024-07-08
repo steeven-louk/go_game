@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,6 +10,9 @@
         {% load bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
+
+    <script defer type="text/javascript" src="{% static 'assets/js/wgo/wgo.js' %}"></script> <!-- or tenuki.js -->
+
 </head>
 <body>
     <div class="container">
