@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Tsumego Problem 1",
+        "board_size": 19,
+        "black_positions": [[3, 3], [16, 16]],
+        "white_positions": [[3, 4], [16, 15]],
+        "solution": [[4, 3], [15, 16]],
+        "is_approved": true,
+        "description": "description 5121"
+    },
+  {"title":"Beginner Tsumego Problem-1","description": "description 1121", "black_positions": ["qa", "qb", "qc", "pd", "pe", "pf", "og", "ng", "lf", "le", "kd", "lc", "lb"], "white_positions": ["pa", "pb", "pc", "nc", "mc", "od", "oe", "ne", "me"], "board_size": "19", "C": "White to play", "solution": [["W", "na", "", ""]], "is_approved": true},
+  {"title":"Beginner Tsumego Problem-2","description": "description 5121", "black_positions": ["qb", "pb", "oc", "nc", "ne", "le", "ld", "ke", "je", "id", "ic", "ib", "ia", "ja"], "white_positions": ["pa", "ob", "nb", "ma", "mc", "lc", "kb", "jb", "jc", "jd"], "board_size": "19", "C": "Black to play", "solution": [["B", "ka", "", ""]], "is_approved": true},
+  {"title":"Beginner Tsumego Problem-3","description": "description 5121", "black_positions": ["rc", "rd", "qd", "pd", "od", "nd", "mc", "mb", "lb", "qa"], "white_positions": ["sb", "rb", "qc", "pc", "oc", "nc", "nb"], "board_size": "19", "C": "Black to play", "solution": [["B", "na", "", ""]], "is_approved": true},
+  {"title":"Beginner Tsumego Problem-4","description": "description 5121", "black_positions": ["rb", "qb", "qd", "pd", "oe", "ne", "mf", "lf", "ke", "kd", "kc", "kb", "jb", "oa"], "white_positions": ["pa", "pb", "oc", "nc", "nb", "me", "le", "lc", "lb"], "board_size": "19", "C": "Black to play", "solution": [["B", "la", "", ""]], "is_approved": false},
+  {"title":"Beginner Tsumego Problem-5","description": "description 5121", "black_positions": ["qb", "qc", "qd", "od", "oe", "of", "nf", "mf", "le", "ke", "kd", "jc", "jb"], "white_positions": ["oc", "nb", "nd", "ne", "me", "ld", "lc", "kc"], "board_size": "19", "C": "Black to play", "solution": [["B", "mc", "", ""]], "is_approved": true}
+]

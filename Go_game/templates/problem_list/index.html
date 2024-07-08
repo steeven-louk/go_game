@@ -1,0 +1,32 @@
+{% extends '../layout.html' %}
+{% block title %}
+    problem list
+{% endblock %}
+
+{% block content %}
+      <main class="container">
+              <h1 class="text-warning fw-bolder text-center text-uppercase my-5">problem list</h1>
+        <div class="p-2 container">
+            <div class="row mx-auto justify-content-center g-3">
+          {%for problem in problems%}
+
+          <article class="p-2 card col-md-4 col-sm-6 border-0">
+              <img src="https://img-31.ccm2.net/6swPhqJGyMWKXN4YzI-NCGvxhH4=/910x/smart/12c6e6c85582494fa4d97caffebc94c8/ccmcms-hugo/24592082.jpg" alt="card-img" class="card-img-top object-fit-cover w-100 img-responsive" alt="game-img" />
+              <div class="card-body">
+                            <h4 class="card-title text-warning text-capitalize fw-bold">{{ problem.title }}</h4>
+                            <p>{{problem.description}}</p>
+                            <p class="card-subtitle">
+                               board_size: {{ problem.board_size }}
+                            </p>
+                        </div>
+              <div class="card-footer block border-0 bg-transparent" style="margin-left: auto">
+                            <div class="btn-group">
+                                <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-warning">Voir Solution</button>
+                            </div>
+              </div>
+          </article>
+          {%endfor%}
+            </div>
+        </div>
+    </main>
+{% endblock %}
