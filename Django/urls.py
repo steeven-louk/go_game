@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('', include('Go_game.urls')),
+    path('register/', views.register, name='register'),
+    path('login/', views.login_view, name='login'),
 ]

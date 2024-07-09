@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Go_game.apps.GoGameConfig',
-    'bootstrap5'
+    'bootstrap5',
+    # 'django-bootstrap5',
 ]
 
 MIDDLEWARE = [
