@@ -1,16 +1,21 @@
 [
-    {
-        "title": "Tsumego Problem 1",
-        "board_size": 19,
-        "black_positions": [[3, 3], [16, 16]],
-        "white_positions": [[3, 4], [16, 15]],
-        "solution": [[4, 3], [15, 16]],
-        "is_approved": true,
-        "description": "description 5121"
-    },
-  {"title":"Beginner Tsumego Problem-1","description": "description 1121", "black_positions": ["qa", "qb", "qc", "pd", "pe", "pf", "og", "ng", "lf", "le", "kd", "lc", "lb"], "white_positions": ["pa", "pb", "pc", "nc", "mc", "od", "oe", "ne", "me"], "board_size": "19", "C": "White to play", "solution": [["W", "na", "", ""]], "is_approved": true},
-  {"title":"Beginner Tsumego Problem-2","description": "description 5121", "black_positions": ["qb", "pb", "oc", "nc", "ne", "le", "ld", "ke", "je", "id", "ic", "ib", "ia", "ja"], "white_positions": ["pa", "ob", "nb", "ma", "mc", "lc", "kb", "jb", "jc", "jd"], "board_size": "19", "C": "Black to play", "solution": [["B", "ka", "", ""]], "is_approved": true},
-  {"title":"Beginner Tsumego Problem-3","description": "description 5121", "black_positions": ["rc", "rd", "qd", "pd", "od", "nd", "mc", "mb", "lb", "qa"], "white_positions": ["sb", "rb", "qc", "pc", "oc", "nc", "nb"], "board_size": "19", "C": "Black to play", "solution": [["B", "na", "", ""]], "is_approved": true},
-  {"title":"Beginner Tsumego Problem-4","description": "description 5121", "black_positions": ["rb", "qb", "qd", "pd", "oe", "ne", "mf", "lf", "ke", "kd", "kc", "kb", "jb", "oa"], "white_positions": ["pa", "pb", "oc", "nc", "nb", "me", "le", "lc", "lb"], "board_size": "19", "C": "Black to play", "solution": [["B", "la", "", ""]], "is_approved": false},
-  {"title":"Beginner Tsumego Problem-5","description": "description 5121", "black_positions": ["qb", "qc", "qd", "od", "oe", "of", "nf", "mf", "le", "ke", "kd", "jc", "jb"], "white_positions": ["oc", "nb", "nd", "ne", "me", "ld", "lc", "kc"], "board_size": "19", "C": "Black to play", "solution": [["B", "mc", "", ""]], "is_approved": true}
+  {"AB": ["eb", "fb", "bc", "cc", "dc", "be"], "AW": ["da", "ab", "bb", "cb", "db"], "SZ": "19", "C": "Black to play: Elementary", "SOL": [["B", "ba", "Correct.", ""]]},
+  {"AB": ["ab", "bb", "cb", "db", "eb"], "AW": ["ca", "ea", "fb", "ac", "bc", "cc", "dc", "ec", "fc"], "SZ": "19", "C": "Black to play: Elementary", "SOL": [["B", "ba", "Correct.", ""]]},
+  {"AB": ["ea", "ab", "bb", "cb", "db"], "AW": ["da", "fa", "fb", "ac", "bc", "cc", "dc", "ec"], "SZ": "19", "C": "Black to play: Elementary", "SOL": [["B", "eb", "Correct.", ""]]},
+  {"AB": ["ab", "bb", "cb", "db"], "AW": ["aa", "ca", "eb", "bc", "cc", "dc", "ec"], "SZ": "19", "C": "Black to play: Elementary", "SOL": [["B", "da", "Correct.", ""]]},
+  {"AB": ["ba", "da", "fa", "fb", "ac", "bc", "cc", "dc", "ec", "fc"], "AW": ["ea", "ab", "bb", "cb", "db", "eb"], "SZ": "19", "C": "Black to play: Elementary", "SOL": [["B", "ca", "", ""]]},
+  {"AB": ["qa", "qb", "qc", "pd", "pe", "pf", "og", "ng", "lf", "le", "kd", "lc", "lb"], "AW": ["pa", "pb", "pc", "nc", "mc", "od", "oe", "ne", "me"], "SZ": "19", "C": "White to play", "SOL": [["W", "na", "", ""]]},
+  {"AB": ["qb", "pb", "oc", "nc", "ne", "le", "ld", "ke", "je", "id", "ic", "ib", "ia", "ja"], "AW": ["pa", "ob", "nb", "ma", "mc", "lc", "kb", "jb", "jc", "jd"], "SZ": "19", "C": "Black to play", "SOL": [["B", "ka", "", ""]]},
+  {"AB": ["rc", "rd", "qd", "pd", "od", "nd", "mc", "mb", "lb", "qa"], "AW": ["sb", "rb", "qc", "pc", "oc", "nc", "nb"], "SZ": "19", "C": "Black to play", "SOL": [["B", "na", "", ""]]},
+  {"AB": ["ra", "rb", "rc", "qc", "pd", "od", "nd", "md", "ld", "kd", "oc", "jc", "jb", "ja", "lb"], "AW": ["qa", "qb", "pc", "ob", "nc", "mc", "lc", "kc", "kb", "ka", "ma"], "SZ": "19", "C": "Black to play", "SOL": [["B", "oa", "", ""]]},
+  {"AB": ["qb", "pb", "pd", "od", "nd", "me", "le", "kd", "jd", "id", "ib", "hb", "mb"], "AW": ["ob", "nb", "nc", "md", "ld", "lb", "jb", "jc"], "SZ": "19", "C": "Black to play", "SOL": [["B", "ma", "", ""]]},
+  {"AB": ["qb", "qc", "qd", "od", "oe", "of", "nf", "mf", "le", "ke", "kd", "jc", "jb"], "AW": ["oc", "nb", "nd", "ne", "me", "ld", "lc", "kc"], "SZ": "19", "C": "Black to play", "SOL": [["B", "mc", "", ""]]},
+  {"AB": ["rb", "qb", "qc", "pd", "pe", "oe", "nf", "mf", "lf", "le", "ld", "kc", "jc", "jb"], "AW": ["mb", "lc", "md", "me", "ne", "od", "oc", "pc"], "SZ": "19", "C": "White to play", "SOL": [["W", "la", "", ""]]},
+  {"AB": ["qa", "qb", "qc", "pc", "od", "oe", "ne", "me", "ke", "kd", "kc", "kb", "ka"], "AW": ["pa", "pb", "ob", "oc", "na", "nd", "ld", "lc", "lb"], "SZ": "19", "C": "Black to play", "SOL": [["B", "nc", "", ""]]},
+  {"AB": ["nd", "md", "lc", "kc", "kb", "mb", "rb", "qc", "pc", "od"], "AW": ["la", "lb", "mc", "nc", "oc", "nb", "pb"], "SZ": "19", "C": "Black to play", "SOL": [["B", "pa", "", ""]]},
+  {"AB": ["qd", "qe", "qf", "pg", "og", "ng", "mf", "me", "md", "nc", "nb", "na", "kc", "lc", "kb", "ra", "rb", "rc"], "AW": ["lb", "mb", "mc", "nd", "od", "pd", "pe", "of", "ne", "nf", "ob", "qb", "qc"], "SZ": "19", "C": "Black to play", "SOL": [["B", "oc", "", ""]]},
+  {"AB": ["rf", "qg", "pg", "og", "ng", "nf", "me", "md", "mb", "nb", "pe", "qa", "rb", "rc", "rd", "re"], "AW": ["ob", "pa", "qb", "qc", "pd", "od", "of", "pf", "qf", "qe"], "SZ": "19", "C": "Black to play", "SOL": [["B", "pc", "", ""]]},
+  {"AB": ["bb", "cb", "db", "fb"], "AW": ["ea", "eb", "bc", "cc", "dc"], "SZ": "19", "C": "Black to play", "SOL": [["B", "ec", "", ""]]},
+  {"AB": ["bn", "cn", "dn", "en", "fn", "go", "gp", "gq", "gr", "fr", "er", "es", "ap", "ao"], "AW": ["ds", "dr", "eq", "fq", "fp", "eo", "cp", "bq"], "SZ": "19", "C": "Black to play", "SOL": [["B", "cr", "", ""]]},
+  {"AB": ["bp", "co", "fo", "do", "eo", "fp", "gq", "hq", "iq", "ir", "br", "bq"], "AW": ["gr", "hs", "hr", "fr", "ep", "dp", "cq", "cr"], "SZ": "19", "C": "Black to play", "SOL": [["B", "eq", "", ""]]}
 ]

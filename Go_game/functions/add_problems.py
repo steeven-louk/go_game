@@ -5,7 +5,13 @@ import json
 import pymongo
 from pymongo import MongoClient
 
-
+def convert_coordinates(coords):
+    converted = []
+    for coord in coords:
+        x = ord(coord[0]) - ord('a')
+        y = ord(coord[1]) - ord('a')
+        converted.append([x, y])
+    return converted
 def load_json_file(file_path):
     with open(file_path, 'r') as file:
         return json.load(file)

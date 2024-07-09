@@ -1,64 +1,33 @@
-import datetime
-from bson.objectid import ObjectId
-from db_connection import db
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+
 
 # Create your models here.
 
 
-class Game:
-    game_collection = db["games"]
+class User(AbstractUser):
+    pass
 
-    @staticmethod
-    def create(player1, player2, sgf_data):
-        """
-        Crée une nouvelle partie et l'insère dans la collection de jeux.
-        """
-        game = {
-            'player1': player1,
-            'player2': player2,
-            'sgf_data': sgf_data,
-            'created_at': datetime.datetime.utcnow()
-        }
-        Game.game_collection.insert_one(game)
-        return game
-
-    @staticmethod
-    def get(game_id):
-        """
-        Récupère une partie par son ID.
-        """
-        return Game.game_collection.find_one({'_id': ObjectId(game_id)})
-
-    @staticmethod
-    def list_all():
-        """
-        Liste toutes les parties enregistrées.
-        """
-        return Game.game_collection.find()
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 
-class Problem:
-    collection = db['problemx']
+class Game(models.Model):
+    player1 = models.ForeignKey(User, on_delete=models.CASCADE, related_name='player1_games')
+    player2 = models.ForeignKey(User, on_delete=models.CASCADE, related_name='player2_games')
+    sgf_data = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
-    @staticmethod
-    def create(description, black_positions, white_positions, solution, created_by):
-        problem = {
-            'description': description,
-            'black_positions': black_positions,
-            'white_positions': white_positions,
-            'solution': solution,
-            'created_by': created_by,
-            'is_approved': False,
-            'created_at': datetime.datetime.utcnow()
-        }
-        Problem.collection.insert_one(problem)
-        return problem
 
-    @staticmethod
-    def get_problem(problem_id):
-        print("idddd", problem_id)
-        return Problem.collection.find_one({'id': ObjectId(problem_id)})
-
-    @staticmethod
-    def get_all_approved():
-        return Problem.collection.find({'is_approved': True})
+class Problem(models.Model):
+    black_positions = models.JSONField()
+    white_positions = models.JSONField()
+    message = models.TextField()
+    solution = models.JSONField()
+    winning_player = models.CharField(max_length=10)
+    description = models.TextField()
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
+    is_approved = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)

@@ -1,0 +1,43 @@
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+
+<body class="bg-light">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="card shadow-sm w-100 " style="max-width: 28rem;">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-3">Connexion</h3>
+                <p class="text-muted text-left">Entrer votre adresse mail et mot de passe pour accéder à votre compte.
+                </p>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Adresse mail</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="m@example.com"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-dark">Se connecter</button> <!-- Bouton noir/gris -->
+                    </div>
+                    {% if error %}
+                    <div class="alert alert-danger mt-3">{{ error }}</div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
