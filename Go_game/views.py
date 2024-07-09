@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 
 from Go_game.models import Problem
 
@@ -14,5 +14,11 @@ def game_list(request):
 
 def problem_list(request):
     problem = Problem.get_all_approved()
-    print("problem viesw",problem)
     return render(request, 'problem_list/index.html', {'problems': problem})
+
+
+def problem_detail(request, problem_id):
+    problem = Problem.get_problem(problem_id)
+
+    print("problem details",problem)
+    return render(request, 'problem_list/problem_detail.html', {'problems': problem})

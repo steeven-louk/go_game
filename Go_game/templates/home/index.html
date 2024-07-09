@@ -2,8 +2,11 @@
 {% block title %}
     home
 {% endblock %}
+{% load static %}
 
 {% block content %}
+        <script defer type="text/javascript" src="{% static 'assets/js/wgo/wgo.js' %}"></script> <!-- or tenuki.js -->
+    <script defer src="{% static 'assets/js/scripts.js' %}"></script>
       <main class="container">
         <h1 class="text-uppercase fw-bolder text-warning mx-auto block shadow-lg text-center my-5 p-2">jeu de go</h1>
 
@@ -13,7 +16,26 @@
             <a href="/games" class="button text-center list-group-item rounded-pill p-2 w-50 text-capitalize fw-bold">listes des parties</a>
             <button class="list-group-item rounded-pill p-2 w-50 text-capitalize fw-bold">aide et documentation</button>
             <button class="list-group-item rounded-pill p-2 w-50 text-capitalize fw-bold">statistiques</button>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="list-group-item rounded-pill p-2 w-50 text-capitalize fw-bold">launch game</button>
         </div>
         </section>
+      
+             <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Play Go Game</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body mx-auto">
+<div id="board-container"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 {% endblock %}

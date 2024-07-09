@@ -1,0 +1,28 @@
+{% extends '../layout.html' %}
+
+{% block title %}
+    problem list
+{% endblock %}
+{% load static %}
+
+{% block content %}
+     <script defer type="text/javascript" src="{% static 'assets/js/wgo/wgo.js' %}"></script> <!-- or tenuki.js -->
+    <script defer src="{% static 'assets/js/scripts.js' %}"></script>
+    <nav aria-label="breadcrumb" class="shadow p-2 position-sticky top-0 bg-white" style="z-index: 5">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="fw-semibold" href="/">Home</a></li>
+            <li class="breadcrumb-item"><a class="fw-semibold" href="/problems">Problem_List</a></li>
+            <li class="breadcrumb-item active fw-bolder text-capitalize" aria-current="page">problem_detail</li>
+        </ol>
+    </nav>
+
+      <main class="container">
+              <h1 class="text-warning fw-bolder text-center text-uppercase my-5">problem detail</h1>
+               <div id="problem-board">kjhg</div>
+    <div id="black-positions" style="display: none;">{{ problem.black_positions|safe }}</div>
+    <div id="white-positions" style="display: none;">{{ problem.white_positions|safe }}</div>
+      <h1>{{ problem.title }}</h1>
+      <h1>{{ problems.title }}</h1>
+    
+    </main>
+{% endblock %}
