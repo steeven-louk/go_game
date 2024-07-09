@@ -55,9 +55,11 @@ class Problem:
         return problem
 
     @staticmethod
-    def get(problem_id):
-        return Problem.collection.find_one({'_id': ObjectId(problem_id)})
+    def get_problem(problem_id):
+        print("idddd", problem_id)
+        return Problem.collection.find_one({'id': ObjectId(problem_id)})
 
     @staticmethod
     def get_all_approved():
         return Problem.collection.find({'is_approved': True})
+    
