@@ -1,20 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var board = new WGo.Board(document.getElementById("problem-board"), {
+    const board = new WGo.Board(document.getElementById("problem-board"), {
         width: 300
     });
-    var black_positions = JSON.parse(document.getElementById("black-positions").textContent);
-    var white_positions = JSON.parse(document.getElementById("white-positions").textContent);
-    var solution_positions = JSON.parse(document.getElementById('solution-positions').textContent);
+    const black_positions = JSON.parse(document.getElementById("black-positions").textContent);
+    const white_positions = JSON.parse(document.getElementById("white-positions").textContent);
+    const solution_positions = JSON.parse(document.getElementById('solution-positions').textContent);
 
-    console.log(black_positions)
-    for (var pos of black_positions) {
+    for (let pos of black_positions) {
         board.addObject({
             x: pos[0],
             y: pos[1],
             c: WGo.B
         });
     }
-    for (var pos of white_positions) {
+    for (let pos of white_positions) {
         board.addObject({
             x: pos[0],
             y: pos[1],
@@ -22,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-        var solutionBtn = document.getElementById('solutionBtn ');
+    const solutionBtn = document.getElementById('solutionBtn ');
     solutionBtn.onclick = function() {
-        for (var pos of solution_positions) {
+        for (let pos of solution_positions) {
             board.addObject({
                 x: pos[0],
                 y: pos[1],

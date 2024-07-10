@@ -15,8 +15,11 @@
         <div class="w-100" style="max-width: 28rem;">
             <div class="text-center mb-4">
                 <h1 class="h3 mb-3 font-weight-normal">Create an account</h1>
+                {% if error %}
+                    <p class=" fw-bold alert alert-danger">{{ message }}</p>
+                {% endif %}
                 <p class="text-muted">
-                    Already have an account? <a href="#" class="font-weight-medium text-decoration-underline">Sign
+                    Already have an account? <a href="/auth/login" class="font-weight-medium text-decoration-underline">Sign
                         in</a>
                 </p>
             </div>

@@ -6,7 +6,11 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    pass
+    email = models.EmailField(unique=True)
+
+    def __str__(self):
+        return self.username
+
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
