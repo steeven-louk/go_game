@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     const board = new WGo.Board(document.getElementById("problem-board"), {
-        width: 300
+        width: 300 //initialisation de la taille du plateau
     });
-    const black_positions = JSON.parse(document.getElementById("black-positions").textContent);
-    const white_positions = JSON.parse(document.getElementById("white-positions").textContent);
+    const black_positions = JSON.parse(document.getElementById("black-positions").textContent); //recuperation des position des  noirs
+    const white_positions = JSON.parse(document.getElementById("white-positions").textContent); //recuperation desdes position des  noirs
     const solution_positions = JSON.parse(document.getElementById('solution-positions').textContent);
 
     for (let pos of black_positions) {

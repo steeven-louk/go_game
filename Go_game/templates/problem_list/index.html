@@ -26,28 +26,27 @@
              </script>
           {%for problem in problems%}
 
-                          <article class="p-2 card col-md-4 col-sm-6 border-0">
-           <div id="problem-boards"></div>
-    <div id="black-positions" style="display: none;">{{ problem.black_positions|safe }}</div>
-    <div id="white-positions" style="display: none;">{{ problem.white_positions|safe }}</div>
+              <article class="p-2 card col-md-4 col-sm-6 border-0">
+                <div id="problem-boards"></div>
+                <div id="black-positions" style="display: none;">{{ problem.black_positions|safe }}</div>
+                <div id="white-positions" style="display: none;">{{ problem.white_positions|safe }}</div>
                             
-              <img src="https://img-31.ccm2.net/6swPhqJGyMWKXN4YzI-NCGvxhH4=/910x/smart/12c6e6c85582494fa4d97caffebc94c8/ccmcms-hugo/24592082.jpg" alt="card-img" class="card-img-top object-fit-cover w-100 img-responsive" alt="game-img" />
-              <div class="card-body">
-                            <h4 class="card-title text-warning text-capitalize fw-bold">{{ problem.title }}</h4>
-                            <p> <a href="{% url 'problem_detail' problem.id %}">
-                                {{problem.description}}
-                            </a>
-</p>
-                            <p class="card-subtitle">
-                               board_size: 19
-                            </p>
-                        </div>
-              <div class="card-footer block border-0 bg-transparent" style="margin-left: auto">
-                            <div class="btn-group">
-                                <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-warning">Show Problem</button>
-                            </div>
-              </div>
-          </article>
+                <img src="https://img-31.ccm2.net/6swPhqJGyMWKXN4YzI-NCGvxhH4=/910x/smart/12c6e6c85582494fa4d97caffebc94c8/ccmcms-hugo/24592082.jpg" alt="card-img" class="card-img-top object-fit-cover w-100 img-responsive" alt="game-img" />
+                <div class="card-body">
+                    <h4 class="card-title text-warning text-capitalize fw-bold">{{ problem.title }}</h4>
+                    <p> 
+                       {{problem.description}}
+                    </p>
+                    <p class="card-subtitle">
+                        board_size: 19
+                    </p>
+                </div>
+                <div class="card-footer block border-0 bg-transparent" style="margin-left: auto">
+                  <div class="btn-group">
+                      <a href="{% url 'problem_detail' problem.id %}" class="btn btn-warning fw-bold">Show Problem</a>
+                  </div>
+                </div>
+              </article>
 
           {%endfor%}
             </div>

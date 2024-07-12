@@ -27,6 +27,6 @@ class Command(BaseCommand):
                     #board_size=board_size,
                     description=description,
                     solution=solution,
-                    created_by_id = 2222222226666664
+                    created_by_id=2222222226666664
                 )
         self.stdout.write(self.style.SUCCESS('Successfully imported problems'))

@@ -1,33 +1,39 @@
 import json
 
-from django.contrib.auth import authenticate, logout, login
+from django.contrib.auth import authenticate, logout as auth_logout, login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password
 from django.core.validators import validate_email
 from django.db import IntegrityError
 from django.shortcuts import render, get_object_or_404, redirect
-from Go_game.functions.add_problems import convert_coordinates
+from Go_game.functions.function import convert_coordinates
 from Go_game.models import Problem, User
 
 
 # Create your views here.
-@login_required(login_url="login")
+
+#Affichage de la page d'acceuil nécessite une connexion
+@login_required
+
 def index(request):
     return render(request, 'home/index.html')
 
 
+#Affichage de la page de jeux
 @login_required(login_url="login")
 def game_list(request):
     return render(request, 'game_list/index.html')
 
 
+#Recuperation et affichage de la liste des problemes
 @login_required(login_url="login")
 def problem_list(request):
     problem = Problem.objects.all()
     return render(request, 'problem_list/index.html', {'problems': problem})
 
 
-@login_required(login_url="login")
+#Recuperation d'un probleme
+@login_required(login_url="auth/login")
 def problem_detail(request, problem_id):
     problem = get_object_or_404(Problem, id=problem_id)
     black_positions = convert_coordinates(problem.black_positions)
@@ -41,6 +47,7 @@ def problem_detail(request, problem_id):
     })
 
 
+#AUTHENTIFICATION
 def register(request):
     error = False
     message = ""
@@ -76,8 +83,8 @@ def register(request):
             if not user:
                 user = User.objects.create_user(username=username, email=email, password=hashed_password)
                 user.save()
-                login(request, user)
-                return redirect('home')
+                auth_login(request, user)
+                return redirect('home')  # Redirige vers la page d'accueil après l'inscription
             context = context.copy()
         except IntegrityError:
 
@@ -85,8 +92,8 @@ def register(request):
     return render(request, 'auth/register/index.html')
 
 
-def login(request):
-    error =""
+def login_view(request):
+    error = ""
     if request.method == 'POST':
         email = request.POST.get('email', None)
         password = request.POST.get('password', None)
@@ -95,7 +102,7 @@ def login(request):
         if user:
             auth_user = authenticate(username=user.username, password=password)
             if auth_user:
-                login(request, auth_user)
+                auth_login(request, auth_user)
                 return redirect('home')
             else:
                 print("password incorrect")
@@ -106,6 +113,7 @@ def login(request):
     return render(request, 'auth/login/index.html', {"error": error})
 
 
-def logout(request):
-    logout(request)
-    return redirect('login')
+def user_logout(request):
+    #logout(request)
+    auth_logout(request)
+    return redirect('login')  # Redirige vers la page de connexion après la déconnexion

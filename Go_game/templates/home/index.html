@@ -5,16 +5,15 @@
 {% load static %}
 
 {% block content %}
-        <script defer type="text/javascript" src="{% static 'assets/js/wgo/wgo.js' %}"></script> <!-- or tenuki.js -->
-    <script defer src="{% static 'assets/js/scripts.js' %}"></script>
+      <script defer src="{% static 'assets/js/scripts.js' %}"></script>
+    
       <main class="container">
-        <h1 class="text-uppercase fw-bolder text-warning mx-auto block shadow-lg text-center my-5 p-2">jeu de go</h1>
+        <h1 class="text-uppercase fw-bolder text-warning mx-auto block shadow-lg text-center mb-5 mt-2 p-2">jeu de go</h1>
 
-        <section class="">
+        <section>
             <div class="list-group gap-4 align-items-center">
             <a href="/problems" class="button text-center list-group-item rounded-pill p-2 w-50 text-capitalize fw-bold">problemes</a>
             <a href="/games" class="button text-center list-group-item rounded-pill p-2 w-50 text-capitalize fw-bold">listes des parties</a>
-            <button class="list-group-item rounded-pill p-2 w-50 text-capitalize fw-bold">aide et documentation</button>
             <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="list-group-item rounded-pill p-2 w-50 text-capitalize fw-bold">launch game</button>
         </div>
         </section>
@@ -28,7 +27,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body mx-auto">
-<div id="board-container"></div>
+                    <div id="board-container"></div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -17,15 +17,16 @@
     </nav>
       <main class="container">
 
-      <script id="black-positions" type="application/json">{{ black_positions|escapejs }}</script>
-<script id="white-positions" type="application/json">{{ white_positions|escapejs }}</script>
-          <script id="solution-positions" type="application/json">{{ solution|escapejs }}</script>
-
-              <h1 class="text-warning fw-bolder text-center text-uppercase my-5">problem detail</h1>
-               <div id="problem-board" class="mx-auto"></div>
-  
-    <h1 class="text-center">{{ problem.description }}</h1>
-          <button id="solutionBtn " class="btn btn-warning">Voir Solution</button>
-
+        <script id="black-positions" type="application/json">{{ black_positions|escapejs }}</script>
+        <script id="white-positions" type="application/json">{{ white_positions|escapejs }}</script>
+        <script id="solution-positions" type="application/json">{{ solution|escapejs }}</script>
+          
+        <h1 class="text-warning fw-bolder text-center text-uppercase my-5">problem detail</h1>
+          
+        <div class="mx-auto d-flex flex-column">
+            <div id="problem-board" class="mx-auto"></div>
+            <button id="solutionBtn " class="btn btn-warning text-center mx-auto">Voir Solution</button>
+        </div>
+        <h2 class="text-center">{{ problem.description }}</h2>
     </main>
 {% endblock %}

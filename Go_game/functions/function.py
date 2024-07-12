@@ -1,9 +1,5 @@
-# add_problems.py
-
 import json
-
 import pymongo
-from pymongo import MongoClient
 
 
 def convert_coordinates(coords):
@@ -15,6 +11,7 @@ def convert_coordinates(coords):
     return converted
 
 
+"""
 def load_json_file(file_path):
     with open(file_path, 'r') as file:
         return json.load(file)
@@ -38,3 +35,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+"""
