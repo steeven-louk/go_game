@@ -2,6 +2,8 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from .models import User, Problem, Game
 from django.contrib.auth import get_user_model
+
+
 class ProblemTests(TestCase):
 
     def setUp(self):
@@ -17,7 +19,7 @@ class ProblemTests(TestCase):
             'white_positions': ["da", "ab", "bb", "cb", "db"],
             'description': 'Black to play: Elementary',
             'solution': [["B", "ba", "Correct.", ""]],
-            'created_by_id':245211555
+            'created_by_id': 245211555
         }
         problem = Problem.objects.create(**problem_data)
         problem.save()
@@ -37,6 +39,7 @@ class ProblemTests(TestCase):
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Black to play: Elementary')
+
 
 class GameTests(TestCase):
 
